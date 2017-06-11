@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.1.1/firebaseui.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+</head>
+
+<body>
+    <nav class="indigo">
+        <a href="#" class="brand-logo center">Admin</a>
+    </nav>
+    <div class="container">
+        <div class="card-panel grey lighten-4">
+            <h3 class="center">Login</h3>
+            <div id="app"></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.1.1/firebaseui.js"></script>
+    <script>
+        firebase.initializeApp({
+            apiKey: "AIzaSyBYik00emT0ZXUIo47STmRuIz5SqjLd928",
+            authDomain: "kunden-d7a53.firebaseapp.com",
+            databaseURL: "https://kunden-d7a53.firebaseio.com",
+            projectId: "kunden-d7a53",
+            storageBucket: "kunden-d7a53.appspot.com",
+            messagingSenderId: "1083979871588"
+        });
+        new firebaseui.auth.AuthUI(firebase.auth()).start('#app', {
+            signInSuccessUrl: 'index.html',
+            signInOptions: [
+                firebase.auth.GoogleAuthProvider.PROVIDER_ID
+            ],
+            tosUrl: 'https://coachalexgreen.de'
+        });
+    </script>
+</body>
+
+</html>
